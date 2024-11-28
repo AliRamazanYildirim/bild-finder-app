@@ -19,6 +19,7 @@ const bereinigen = (e) => {
 
 const suche = async (e) => {
   e.preventDefault();
+  imageListWrapper.innerHTML = "";
   const wert = sucheInput.value.trim();
   if (!wert) {
     alert("Bitte geben Sie einen Suchbegriff ein.");
