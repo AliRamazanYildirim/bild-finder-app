@@ -1,1 +1,8 @@
-{}
+{
+  "scripts": {
+    "start": "live-server"
+  },
+  "dependencies": {
+    "vite": "^6.0.3"
+  }
+}

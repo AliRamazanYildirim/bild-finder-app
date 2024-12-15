@@ -26,20 +26,23 @@ const suche = async (e) => {
     return;
   }
   try {
+    const apiKey = import.meta.env.VITE_UNSPLASH_API_KEY;
     const response = await fetch(`https://api.unsplash.com/search/photos?query=${wert}`, {
       method: "GET",
       headers: {
-        Authorization: "Client-ID EgFDiI-FJD9hNyhOHsBVJYgmBjhjoUqJNElMICGBDgw",
+        Authorization: `Client-ID ${apiKey}`,
       }
     });
     const data = await response.json();
     data.results.forEach((image) => {
+      console.log(data);
       addiereImageZuUI(image.urls.small);
     });
   } catch (error) {
     console.error("Error", error);
   }
 };
+
 
 const addiereImageZuUI = (url) => {
   const div = document.createElement("div");
